@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style>
+body {
+	background: #fff;
+	margin: 0;				/* resetten van marges */
+	padding: 0;				/* resetten van padding */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #000;
+	min-width: 615px;       /* 2 x (LC fullwidth + CC padding) + RC fullwidth */
+	text-align: center; 	/* dit centreert de container in IE 5* browsers */
+							/* Tekst wordt left aligned default in the #container div */
+}
+
+/* #### BASE (bevat header en container) #### */
+#base {
+	width: 1200px;			/* ipv 100% */
+	margin: 0 auto;			/* de pagina wordt automatisch gecentreerd indien nodig (icm de width!) */
+	text-align: left;		/* override van text-align: center in the body */
+}
+/* #### CENTER (COLUMN) #### */
+#center {
+	padding: 10px 20px;		/* CC padding */
+	width: 100%;
+}
+/* #### De tabel (-len) opmaken #### */
+.lijst tr:nth-child(even) {background: #fff;z-index: 1;}
+.lijst tr:nth-child(odd) {background: #ccc;z-index: 1;}
+.lijst tr:hover td { background-color:#f60;}
+
+.lijst tr td a, tr td a:link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  font-weight: normal;
+  z-index: 1;
+}
+
+th {font-weight: bold;}
+.edit td{font-weight: bold;}
+.edit th {font-weight: normal;}
+
+
+/* #### HOVERTIP (http://www.spiceupyourblog.com/2011/05/simple-css-only-tooltip-descriptions.html) #### */
+.hovertip {
+	position: relative;
+	display: inline-block;
+	text-decoration: none;
+	color: #222;
+	outline: none;
+}
+
+.hovertip span {
+	visibility: hidden;
+	position: absolute;
+	bottom: 30px;
+	left: 50%;
+	z-index: 999;
+	width: 230px;
+	margin-left: -127px;
+	padding: 10px;
+	border: 2px solid #ccc;
+	opacity: .9;
+	background-color: #ddd;
+	background-image: -webkit-linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,0));
+	background-image: -moz-linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,0));
+	background-image: -ms-linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,0));
+	background-image: -o-linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,0));
+	background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,0));
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.4), 0 1px 0 rgba(255,255,255,.5) inset;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.4), 0 1px 0 rgba(255,255,255,.5) inset;
+	box-shadow: 0 1px 2px rgba(0,0,0,.4), 0 1px 0 rgba(255,255,255,.5) inset;
+	text-shadow: 0 1px 0 rgba(255,255,255,.4);
+}
+
+.hovertip:hover{ border: 0; } /* IE6 fix */
+
+.hovertip:hover span { visibility: visible; }
+
+.hovertip span:before, .hovertip span:after {
+	content: "";
+	position: absolute;
+	z-index: 1000;
+	bottom: -7px;
+	left: 50%;
+	margin-left: -8px;
+	border-top: 8px solid #ddd;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	border-bottom: 0;
+}
+
+.hovertip span:before {
+	border-top-color: #ccc;
+	bottom: -8px;
+}
+
+</style>
+</head>
+<body>
+
+<div id="base">
+
+<div id="container">
+
+<div id="center" class="column">
+
+<table class="lijst" border="0">
+<tr>
+<th>Id</th>
+<th>Provincie</a></th>
+<th>Plaats</a></th>
+<th>Straat</a></th>
+</tr>
+<td><a class='hovertip' href="#">10<span>Klik voor foto's en een kaart</span></a></td>
+<td><a class='hovertip' href="#">NH<span>Klik voor foto's en een kaart</span></a></td>
+<td><a class='hovertip' href="#">Amstelveen<span>Klik voor foto's en een kaart</span></a></td>
+<td><a class='hovertip' href="#">Melkweg<span>Klik voor foto's en een kaart</span></a></td>
+</tr>
+<tr>
+<td><a class='hovertip' href="#">20<span>Klik voor foto's en een kaart</span></a></td>
+<td><a class='hovertip' href="#">ZH<span>Klik voor foto's en een kaart</span></a></td>
+<td><a class='hovertip' href="#">Den Haag<span>Klik voor foto's en een kaart</span></a></td>
+<td><a class='hovertip' href="#">Melis Stokelaan<span>Klik voor foto's en een kaart</span></a></td>
+</tr>
+<tr>
+<td><a class='hovertip' href="#">30<span>Klik voor foto's en een kaart</span></a></td>
+<td><a class='hovertip' href="#">ZH<span>Klik voor foto's en een kaart</span></a></td>
+<td><a class='hovertip' href="#">Den Haag<span>Klik voor foto's en een kaart</span></a></td>
+<td><a class='hovertip' href="#">Koningskade<span>Klik voor foto's en een kaart</span></a></td>
+</tr>
+<tr>
+<td><a class='hovertip' href="#">40<span>Klik voor foto's en een kaart</span></a></td>
+<td><a class='hovertip' href="#">NH<span>Klik voor foto's en een kaart</span></a></td>
+<td><a class='hovertip' href="#">Abcoude<span>Klik voor foto's en een kaart</span></a></td>
+<td><a class='hovertip' href="#">Stationsstraat<span>Klik voor foto's en een kaart</span></a></td>
+</tr>
+<tr>
+<td><a class='hovertip' href="#">50<span>Klik voor foto's en een kaart</span></a></td>
+<td><a class='hovertip' href="#">NH<span>Klik voor foto's en een kaart</span></a></td>
+<td><a class='hovertip' href="#">Amsterdam<span>Klik voor foto's en een kaart</span></a></td>
+<td><a class='hovertip' href="#">Radarweg<span>Klik voor foto's en een kaart</span></a></td>
+</tr>
+<tr>
+<td><a class='hovertip' href="#">60<span>Klik voor foto's en een kaart</span></a></td>
+<td><a class='hovertip' href="#">ZH<span>Klik voor foto's en een kaart</span></a></td>
+<td><a class='hovertip' href="#">Den Haag<span>Klik voor foto's en een kaart</span></a></td>
+<td><a class='hovertip' href="#">Conradkade<span>Klik voor foto's en een kaart</span></a></td>
+</tr>
+<tr>
+<td><a class='hovertip' href="#">70<span>Klik voor foto's en een kaart</span></a></td>
+<td><a class='hovertip' href="#">ZH<span>Klik voor foto's en een kaart</span></a></td>
+<td><a class='hovertip' href="#">Den Haag<span>Klik voor foto's en een kaart</span></a></td>
+<td><a class='hovertip' href="#">Delftweg 34<span>Klik voor foto's en een kaart</span></a></td>
+</tr>
+<tr>
+<td><a class='hovertip' href="#">80<span>Klik voor foto's en een kaart</span></a></td>
+<td><a class='hovertip' href="#">ZH<span>Klik voor foto's en een kaart</span></a></td>
+<td><a class='hovertip' href="#">Den Haag<span>Klik voor foto's en een kaart</span></a></td>
+<td><a class='hovertip' href="#">Delftweg 50<span>Klik voor foto's en een kaart</span></a></td>
+</tr>
+<tr>
+<td><a class='hovertip' href="#">90<span>Klik voor foto's en een kaart</span></a></td>
+<td><a class='hovertip' href="#">ZH<span>Klik voor foto's en een kaart</span></a></td>
+<td><a class='hovertip' href="#">Den Haag<span>Klik voor foto's en een kaart</span></a></td>
+<td><a class='hovertip' href="#">Delftweg halte A4<span>Klik voor foto's en een kaart</span></a></td>
+</tr>
+<tr>
+<td><a class='hovertip' href="#">100<span>Klik voor foto's en een kaart</span></a></td>
+<td><a class='hovertip' href="#">ZH<span>Klik voor foto's en een kaart</span></a></td>
+<td><a class='hovertip' href="#">Den Haag<span>Klik voor foto's en een kaart</span></a></td>
+<td><a class='hovertip' href="#">Delftweg inrit bij halte<span>Klik voor foto's en een kaart</span></a></td>
+</tr>
+</table>
+</div><!-- end #center -->
+</div><!-- end #container -->
+
+</div><!-- end #base -->
+
+</br>
+Nog meer gewone tekst<br/>
+Nog veel meer gewone tekst<br/>
+<a class='hovertip' href="#">Gewone tekst met hovertip<span>Klik voor foto's en een kaart</span></a></body>
+</html>
